@@ -1,0 +1,81 @@
+[02 Dez 2015 04:15:36] DEBUG Executing SQL script
+[02 Dez 2015 04:15:36] INFO ================================================================================
+[02 Dez 2015 04:15:36] INFO onError= 'stop'
+[02 Dez 2015 04:15:36] INFO autoCommit= 'false'
+[02 Dez 2015 04:15:36] INFO username= 'root'
+[02 Dez 2015 04:15:36] INFO outputPath= 'C:\WebRatio\WebRatio Community Platform 7.2.10\workspace\PostoSelvagem\.Temp~\RollbackSQL.xml'
+[02 Dez 2015 04:15:36] INFO outputLogPath= 'C:\WebRatio\WebRatio Community Platform 7.2.10\workspace\PostoSelvagem\.Temp~\RollbackSQL.xml.log'
+[02 Dez 2015 04:15:36] INFO encoding= ''
+[02 Dez 2015 04:15:36] INFO driverClass= 'com.mysql.jdbc.Driver'
+[02 Dez 2015 04:15:36] INFO sqlScript= 'C:\WebRatio\WebRatio Community Platform 7.2.10\workspace\PostoSelvagem\.Temp~\RollbackSQL.sql'
+[02 Dez 2015 04:15:36] INFO eventSocketPort= '53789'
+[02 Dez 2015 04:15:36] INFO statementSeparator= ';'
+[02 Dez 2015 04:15:36] INFO derby.system.home= 'C:\WebRatio\WebRatio Community Platform 7.2.10\workspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[02 Dez 2015 04:15:36] INFO password= '545734771Wl0616'
+[02 Dez 2015 04:15:36] INFO url= 'jdbc:mysql://localhost:3306/ifml_posto'
+[02 Dez 2015 04:15:36] INFO ================================================================================
+[02 Dez 2015 04:15:36] INFO Connecting to the Database...
+[02 Dez 2015 04:15:36] INFO Database connection estabilished
+[02 Dez 2015 04:15:36] INFO transaction isolation: 4
+[02 Dez 2015 04:15:36] DEBUG ================================================================================
+[02 Dez 2015 04:15:36] DEBUG Executing SQL script file: C:\WebRatio\WebRatio Community Platform 7.2.10\workspace\PostoSelvagem\.Temp~\RollbackSQL.sql
+[02 Dez 2015 04:15:36] DEBUG Executing statement:  alter table `fornecedor`  drop column  `pessoajuridica_nome`
+[02 Dez 2015 04:15:37] DEBUG Executing statement:  alter table `cliente`   drop foreign key `fk_cliente_pessoajuridica`
+[02 Dez 2015 04:15:37] DEBUG Executing statement:  alter table `cliente`  drop column  `pessoajuridica_codpessoa`
+[02 Dez 2015 04:15:38] DEBUG Executing statement:  alter table `cliente`   drop foreign key `fk_cliente_pessoafisica`
+[02 Dez 2015 04:15:38] DEBUG Executing statement:  alter table `cliente`  drop column  `pessoafisica_codpessoa`
+[02 Dez 2015 04:15:39] DEBUG Executing statement:  alter table `notafiscal`   drop foreign key `fk_notafiscal_venda`
+[02 Dez 2015 04:15:39] DEBUG Executing statement:  alter table `notafiscal`  drop column  `venda_oid`
+[02 Dez 2015 04:15:40] DEBUG Executing statement:  alter table `boleto`   drop foreign key `fk_boleto_contasareceber`
+[02 Dez 2015 04:15:40] DEBUG Executing statement:  alter table `boleto`  drop column  `contasareceber_oid`
+[02 Dez 2015 04:15:40] DEBUG Executing statement:  alter table `contasareceber`   drop foreign key `fk_contasareceber_venda`
+[02 Dez 2015 04:15:40] DEBUG Executing statement:  alter table `contasareceber`  drop column  `venda_oid`
+[02 Dez 2015 04:15:41] DEBUG Executing statement:  alter table `contasapagar`   drop foreign key `fk_contasapagar_compra`
+[02 Dez 2015 04:15:41] DEBUG Executing statement:  alter table `contasapagar`  drop column  `compra_oid`
+[02 Dez 2015 04:15:42] DEBUG Executing statement:  alter table `itenscompra`   drop foreign key `fk_itenscompra_compra`
+[02 Dez 2015 04:15:42] DEBUG Executing statement:  alter table `itenscompra`  drop column  `compra_oid`
+[02 Dez 2015 04:15:43] DEBUG Executing statement:  alter table `itenscompra`   drop foreign key `fk_itenscompra_combustivel`
+[02 Dez 2015 04:15:43] DEBUG Executing statement:  alter table `itenscompra`  drop column  `combustivel_oid`
+[02 Dez 2015 04:15:44] DEBUG Executing statement:  alter table `compra`   drop foreign key `fk_compra_fornecedor`
+[02 Dez 2015 04:15:44] DEBUG Executing statement:  alter table `compra`  drop column  `fornecedor_oid`
+[02 Dez 2015 04:15:46] DEBUG Executing statement:  alter table `tanque`   drop foreign key `fk_tanque_combustivel`
+[02 Dez 2015 04:15:46] DEBUG Executing statement:  alter table `tanque`  drop column  `combustivel_oid`
+[02 Dez 2015 04:15:48] DEBUG Executing statement:  alter table `itensvenda`   drop foreign key `fk_itensvenda_combustivel`
+[02 Dez 2015 04:15:48] DEBUG Executing statement:  alter table `itensvenda`  drop column  `combustivel_oid`
+[02 Dez 2015 04:15:49] DEBUG Executing statement:  alter table `itensvenda`   drop foreign key `fk_itensvenda_venda`
+[02 Dez 2015 04:15:49] DEBUG Executing statement:  alter table `itensvenda`  drop column  `venda_oid`
+[02 Dez 2015 04:15:49] DEBUG Executing statement:  alter table `funcionario`   drop foreign key `fk_funcionario_user`
+[02 Dez 2015 04:15:49] DEBUG Executing statement:  alter table `funcionario`  drop column  `user_oid`
+[02 Dez 2015 04:15:50] DEBUG Executing statement:  alter table `user_group`   drop foreign key `fk_user_group_group`
+[02 Dez 2015 04:15:50] DEBUG Executing statement:  alter table `user_group`   drop foreign key `fk_user_group_user`
+[02 Dez 2015 04:15:50] DEBUG Executing statement:  drop table `user_group`
+[02 Dez 2015 04:15:51] DEBUG Executing statement:  alter table `user`   drop foreign key `fk_user_group`
+[02 Dez 2015 04:15:51] DEBUG Executing statement:  alter table `user`  drop column  `group_oid`
+[02 Dez 2015 04:15:52] DEBUG Executing statement:  alter table `group_module`   drop foreign key `fk_group_module_module`
+[02 Dez 2015 04:15:52] DEBUG Executing statement:  alter table `group_module`   drop foreign key `fk_group_module_group`
+[02 Dez 2015 04:15:52] DEBUG Executing statement:  drop table `group_module`
+[02 Dez 2015 04:15:52] DEBUG Executing statement:  alter table `group`   drop foreign key `fk_group_module`
+[02 Dez 2015 04:15:52] DEBUG Executing statement:  alter table `group`  drop column  `module_oid`
+[02 Dez 2015 04:15:53] DEBUG Executing statement:  drop table `itensvenda`
+[02 Dez 2015 04:15:53] DEBUG Executing statement:  drop table `venda`
+[02 Dez 2015 04:15:54] DEBUG Executing statement:  drop table `tanque`
+[02 Dez 2015 04:15:54] DEBUG Executing statement:  drop table `fornecedor`
+[02 Dez 2015 04:15:54] DEBUG Executing statement:  drop table `cliente`
+[02 Dez 2015 04:15:54] DEBUG Executing statement:  drop table `pessoajuridica`
+[02 Dez 2015 04:15:54] DEBUG Executing statement:  drop table `pessoafisica`
+[02 Dez 2015 04:15:55] DEBUG Executing statement:  drop table `pessoa`
+[02 Dez 2015 04:15:55] DEBUG Executing statement:  drop table `notafiscal`
+[02 Dez 2015 04:15:55] DEBUG Executing statement:  drop table `boleto`
+[02 Dez 2015 04:15:56] DEBUG Executing statement:  drop table `contasareceber`
+[02 Dez 2015 04:15:56] DEBUG Executing statement:  drop table `contasapagar`
+[02 Dez 2015 04:15:56] DEBUG Executing statement:  drop table `itenscompra`
+[02 Dez 2015 04:15:56] DEBUG Executing statement:  drop table `compra`
+[02 Dez 2015 04:15:57] DEBUG Executing statement:  drop table `combustivel`
+[02 Dez 2015 04:15:57] DEBUG Executing statement:  drop table `funcionario`
+[02 Dez 2015 04:15:57] DEBUG Executing statement:  drop table `user`
+[02 Dez 2015 04:15:58] DEBUG Executing statement:  drop table `module`
+[02 Dez 2015 04:15:59] DEBUG Executing statement:  drop table `group`
+[02 Dez 2015 04:15:59] DEBUG ================================================================================
+[02 Dez 2015 04:16:00] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[02 Dez 2015 04:16:00] INFO Database connection closed
+[02 Dez 2015 04:16:00] DEBUG Total time: 23532 milliseconds

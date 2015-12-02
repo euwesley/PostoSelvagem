@@ -1,0 +1,89 @@
+[02 Dez 2015 04:23:58] DEBUG Executing SQL script
+[02 Dez 2015 04:23:58] INFO ================================================================================
+[02 Dez 2015 04:23:58] INFO onError= 'stop'
+[02 Dez 2015 04:23:58] INFO autoCommit= 'false'
+[02 Dez 2015 04:23:58] INFO username= 'root'
+[02 Dez 2015 04:23:58] INFO outputPath= 'C:\WebRatio\WebRatio Community Platform 7.2.10\workspace\PostoSelvagem\.Temp~\UpdateSQL.xml'
+[02 Dez 2015 04:23:58] INFO outputLogPath= 'C:\WebRatio\WebRatio Community Platform 7.2.10\workspace\PostoSelvagem\.Temp~\UpdateSQL.xml.log'
+[02 Dez 2015 04:23:58] INFO encoding= ''
+[02 Dez 2015 04:23:58] INFO driverClass= 'com.mysql.jdbc.Driver'
+[02 Dez 2015 04:23:58] INFO sqlScript= 'C:\WebRatio\WebRatio Community Platform 7.2.10\workspace\PostoSelvagem\.Temp~\UpdateSQL.sql'
+[02 Dez 2015 04:23:58] INFO eventSocketPort= '53837'
+[02 Dez 2015 04:23:58] INFO statementSeparator= ';'
+[02 Dez 2015 04:23:58] INFO derby.system.home= 'C:\WebRatio\WebRatio Community Platform 7.2.10\workspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[02 Dez 2015 04:23:58] INFO password= '545734771Wl0616'
+[02 Dez 2015 04:23:58] INFO url= 'jdbc:mysql://localhost:3306/ifml_posto'
+[02 Dez 2015 04:23:58] INFO ================================================================================
+[02 Dez 2015 04:23:58] INFO Connecting to the Database...
+[02 Dez 2015 04:23:59] INFO Database connection estabilished
+[02 Dez 2015 04:23:59] INFO transaction isolation: 4
+[02 Dez 2015 04:23:59] DEBUG ================================================================================
+[02 Dez 2015 04:23:59] DEBUG Executing SQL script file: C:\WebRatio\WebRatio Community Platform 7.2.10\workspace\PostoSelvagem\.Temp~\UpdateSQL.sql
+[02 Dez 2015 04:23:59] DEBUG Executing statement:  create table `group` ( `oid`  integer  not null, `groupname`  varchar(255), primary key (`oid`) )
+[02 Dez 2015 04:23:59] DEBUG Executing statement:    create table `module` ( `oid`  integer  not null, `moduleid`  varchar(255), `modulename`  varchar(255), primary key (`oid`) )
+[02 Dez 2015 04:23:59] DEBUG Executing statement:    create table `user` ( `oid`  integer  not null, `username`  varchar(255), `password`  varchar(255), `email`  varchar(255), primary key (`oid`) )
+[02 Dez 2015 04:23:59] DEBUG Executing statement:    create table `funcionario` ( `pessoafisica_codpessoa`  integer  not null, `cargo`  varchar(255), `salario`  double precision, `dataadmi`  date, `adicional`  bit, primary key (`pessoafisica_codpessoa`) )
+[02 Dez 2015 04:24:00] DEBUG Executing statement:    create table `combustivel` ( `oid`  integer  not null, `nome`  varchar(255), primary key (`oid`) )
+[02 Dez 2015 04:24:00] DEBUG Executing statement:    create table `compra` ( `oid`  integer  not null, `valortotal`  double precision, `data`  date, primary key (`oid`) )
+[02 Dez 2015 04:24:01] DEBUG Executing statement:    create table `itenscompra` ( `oid`  integer  not null, `quantidade`  double precision, primary key (`oid`) )
+[02 Dez 2015 04:24:01] DEBUG Executing statement:    create table `contasapagar` ( `oid`  integer  not null, `desconto`  double precision, `juros`  double precision, `datavencimento`  date, primary key (`oid`) )
+[02 Dez 2015 04:24:01] DEBUG Executing statement:    create table `contasareceber` ( `oid`  integer  not null, `datapagamento`  date, `desconto`  double precision, `juros`  double precision, `datavencimento`  date, primary key (`oid`) )
+[02 Dez 2015 04:24:02] DEBUG Executing statement:    create table `boleto` ( `oid`  integer  not null, primary key (`oid`) )
+[02 Dez 2015 04:24:02] DEBUG Executing statement:    create table `notafiscal` ( `oid`  integer  not null, `impostos`  double precision, primary key (`oid`) )
+[02 Dez 2015 04:24:02] DEBUG Executing statement:    create table `pessoa` ( `nome`  varchar(255), `telefone`  varchar(255), `endereco`  varchar(255), `codpessoa`  integer  not null, primary key (`codpessoa`) )
+[02 Dez 2015 04:24:03] DEBUG Executing statement:    create table `pessoafisica` ( `pessoa_codpessoa`  integer  not null, `rg`  integer, `datanasc`  date, `cpf`  integer, primary key (`pessoa_codpessoa`) )
+[02 Dez 2015 04:24:03] DEBUG Executing statement:    create table `pessoajuridica` ( `pessoa_codpessoa`  integer  not null, `cnpj`  integer, `razaosocial`  varchar(255), `inscriest`  integer, primary key (`pessoa_codpessoa`) )
+[02 Dez 2015 04:24:03] DEBUG Executing statement:    create table `cliente` ( `oid`  integer  not null, `dataultimovalelavag`  date, primary key (`oid`) )
+[02 Dez 2015 04:24:04] DEBUG Executing statement:    create table `fornecedor` ( `oid`  integer  not null, primary key (`oid`) )
+[02 Dez 2015 04:24:04] DEBUG Executing statement:    create table `tanque` ( `oid`  integer  not null, `qtdnivel`  double precision, `qtdmaximo`  double precision, primary key (`oid`) )
+[02 Dez 2015 04:24:04] DEBUG Executing statement:    create table `venda` ( `oid`  integer  not null, `data`  date, `valortotal`  double precision, `placaveiculo`  varchar(255), primary key (`oid`) )
+[02 Dez 2015 04:24:05] DEBUG Executing statement:    create table `itensvenda` ( `oid`  integer  not null, `quantidade`  double precision, primary key (`oid`) )
+[02 Dez 2015 04:24:05] DEBUG Executing statement:    alter table `group`  add column  `module_oid`  integer
+[02 Dez 2015 04:24:05] DEBUG Executing statement:  alter table `group`   add index fk_group_module (`module_oid`), add constraint fk_group_module foreign key (`module_oid`) references `module` (`oid`)
+[02 Dez 2015 04:24:07] DEBUG Executing statement:    create table `group_module` ( `group_oid`  integer not null, `module_oid`  integer not null, primary key (`group_oid`, `module_oid`) )
+[02 Dez 2015 04:24:07] DEBUG Executing statement:  alter table `group_module`   add index fk_group_module_group (`group_oid`), add constraint fk_group_module_group foreign key (`group_oid`) references `group` (`oid`)
+[02 Dez 2015 04:24:08] DEBUG Executing statement:  alter table `group_module`   add index fk_group_module_module (`module_oid`), add constraint fk_group_module_module foreign key (`module_oid`) references `module` (`oid`)
+[02 Dez 2015 04:24:09] DEBUG Executing statement:    alter table `user`  add column  `group_oid`  integer
+[02 Dez 2015 04:24:09] DEBUG Executing statement:  alter table `user`   add index fk_user_group (`group_oid`), add constraint fk_user_group foreign key (`group_oid`) references `group` (`oid`)
+[02 Dez 2015 04:24:13] DEBUG Executing statement:    create table `user_group` ( `user_oid`  integer not null, `group_oid`  integer not null, primary key (`user_oid`, `group_oid`) )
+[02 Dez 2015 04:24:14] DEBUG Executing statement:  alter table `user_group`   add index fk_user_group_user (`user_oid`), add constraint fk_user_group_user foreign key (`user_oid`) references `user` (`oid`)
+[02 Dez 2015 04:24:15] DEBUG Executing statement:  alter table `user_group`   add index fk_user_group_group (`group_oid`), add constraint fk_user_group_group foreign key (`group_oid`) references `group` (`oid`)
+[02 Dez 2015 04:24:16] DEBUG Executing statement:    alter table `funcionario`  add column  `user_oid`  integer
+[02 Dez 2015 04:24:16] DEBUG Executing statement:  alter table `funcionario`   add index fk_funcionario_user (`user_oid`), add constraint fk_funcionario_user foreign key (`user_oid`) references `user` (`oid`)
+[02 Dez 2015 04:24:17] DEBUG Executing statement:    alter table `itensvenda`  add column  `venda_oid`  integer
+[02 Dez 2015 04:24:18] DEBUG Executing statement:  alter table `itensvenda`   add index fk_itensvenda_venda (`venda_oid`), add constraint fk_itensvenda_venda foreign key (`venda_oid`) references `venda` (`oid`)
+[02 Dez 2015 04:24:19] DEBUG Executing statement:    alter table `itensvenda`  add column  `combustivel_oid`  integer
+[02 Dez 2015 04:24:20] DEBUG Executing statement:  alter table `itensvenda`   add index fk_itensvenda_combustivel (`combustivel_oid`), add constraint fk_itensvenda_combustivel foreign key (`combustivel_oid`) references `combustivel` (`oid`)
+[02 Dez 2015 04:24:21] DEBUG Executing statement:    alter table `tanque`  add column  `combustivel_oid`  integer
+[02 Dez 2015 04:24:22] DEBUG Executing statement:  alter table `tanque`   add index fk_tanque_combustivel (`combustivel_oid`), add constraint fk_tanque_combustivel foreign key (`combustivel_oid`) references `combustivel` (`oid`)
+[02 Dez 2015 04:24:23] DEBUG Executing statement:    alter table `compra`  add column  `fornecedor_oid`  integer
+[02 Dez 2015 04:24:24] DEBUG Executing statement:  alter table `compra`   add index fk_compra_fornecedor (`fornecedor_oid`), add constraint fk_compra_fornecedor foreign key (`fornecedor_oid`) references `fornecedor` (`oid`)
+[02 Dez 2015 04:24:25] DEBUG Executing statement:    alter table `itenscompra`  add column  `combustivel_oid`  integer
+[02 Dez 2015 04:24:25] DEBUG Executing statement:  alter table `itenscompra`   add index fk_itenscompra_combustivel (`combustivel_oid`), add constraint fk_itenscompra_combustivel foreign key (`combustivel_oid`) references `combustivel` (`oid`)
+[02 Dez 2015 04:24:28] DEBUG Executing statement:    alter table `itenscompra`  add column  `compra_oid`  integer
+[02 Dez 2015 04:24:28] DEBUG Executing statement:  alter table `itenscompra`   add index fk_itenscompra_compra (`compra_oid`), add constraint fk_itenscompra_compra foreign key (`compra_oid`) references `compra` (`oid`)
+[02 Dez 2015 04:24:29] DEBUG Executing statement:    alter table `contasapagar`  add column  `compra_oid`  integer
+[02 Dez 2015 04:24:30] DEBUG Executing statement:  alter table `contasapagar`   add index fk_contasapagar_compra (`compra_oid`), add constraint fk_contasapagar_compra foreign key (`compra_oid`) references `compra` (`oid`)
+[02 Dez 2015 04:24:31] DEBUG Executing statement:    alter table `contasareceber`  add column  `venda_oid`  integer
+[02 Dez 2015 04:24:32] DEBUG Executing statement:  alter table `contasareceber`   add index fk_contasareceber_venda (`venda_oid`), add constraint fk_contasareceber_venda foreign key (`venda_oid`) references `venda` (`oid`)
+[02 Dez 2015 04:24:33] DEBUG Executing statement:    alter table `boleto`  add column  `contasareceber_oid`  integer
+[02 Dez 2015 04:24:34] DEBUG Executing statement:  alter table `boleto`   add index fk_boleto_contasareceber (`contasareceber_oid`), add constraint fk_boleto_contasareceber foreign key (`contasareceber_oid`) references `contasareceber` (`oid`)
+[02 Dez 2015 04:24:35] DEBUG Executing statement:    alter table `notafiscal`  add column  `venda_oid`  integer
+[02 Dez 2015 04:24:35] DEBUG Executing statement:  alter table `notafiscal`   add index fk_notafiscal_venda (`venda_oid`), add constraint fk_notafiscal_venda foreign key (`venda_oid`) references `venda` (`oid`)
+[02 Dez 2015 04:24:36] DEBUG Executing statement:    alter table `cliente`  add column  `pessoafisica_codpessoa`  integer
+[02 Dez 2015 04:24:37] DEBUG Executing statement:  alter table `cliente`   add index fk_cliente_pessoafisica (`pessoafisica_codpessoa`), add constraint fk_cliente_pessoafisica foreign key (`pessoafisica_codpessoa`) references `pessoafisica` (`pessoa_codpessoa`)
+[02 Dez 2015 04:24:39] DEBUG Executing statement:    alter table `cliente`  add column  `pessoajuridica_codpessoa`  integer
+[02 Dez 2015 04:24:40] DEBUG Executing statement:  alter table `cliente`   add index fk_cliente_pessoajuridica (`pessoajuridica_codpessoa`), add constraint fk_cliente_pessoajuridica foreign key (`pessoajuridica_codpessoa`) references `pessoajuridica` (`pessoa_codpessoa`)
+[02 Dez 2015 04:24:43] DEBUG Executing statement:    alter table `fornecedor`  add column  `pessoajuridica_codpessoa`  integer
+[02 Dez 2015 04:24:44] DEBUG Executing statement:  alter table `fornecedor`   add index fk_fornecedor_pessoajuridica (`pessoajuridica_codpessoa`), add constraint fk_fornecedor_pessoajuridica foreign key (`pessoajuridica_codpessoa`) references `pessoajuridica` (`pessoa_codpessoa`)
+[02 Dez 2015 04:24:44] DEBUG Executing statement:    alter table `venda`  add column  `funcionario_codpessoa`  integer
+[02 Dez 2015 04:24:45] DEBUG Executing statement:  alter table `venda`   add index fk_venda_funcionario (`funcionario_codpessoa`), add constraint fk_venda_funcionario foreign key (`funcionario_codpessoa`) references `funcionario` (`pessoafisica_codpessoa`)
+[02 Dez 2015 04:24:46] DEBUG Executing statement:    alter table `venda`  add column  `cliente_oid`  integer
+[02 Dez 2015 04:24:47] DEBUG Executing statement:  alter table `venda`   add index fk_venda_cliente (`cliente_oid`), add constraint fk_venda_cliente foreign key (`cliente_oid`) references `cliente` (`oid`)
+[02 Dez 2015 04:24:48] DEBUG Executing statement:    alter table `funcionario`   add index fk_funcionario_pessoafisica (`pessoafisica_codpessoa`), add constraint fk_funcionario_pessoafisica foreign key (`pessoafisica_codpessoa`) references `pessoafisica` (`pessoa_codpessoa`)
+[02 Dez 2015 04:24:49] DEBUG Executing statement:    alter table `pessoafisica`   add index fk_pessoafisica_pessoa (`pessoa_codpessoa`), add constraint fk_pessoafisica_pessoa foreign key (`pessoa_codpessoa`) references `pessoa` (`codpessoa`)
+[02 Dez 2015 04:24:50] DEBUG Executing statement:    alter table `pessoajuridica`   add index fk_pessoajuridica_pessoa (`pessoa_codpessoa`), add constraint fk_pessoajuridica_pessoa foreign key (`pessoa_codpessoa`) references `pessoa` (`codpessoa`)
+[02 Dez 2015 04:24:51] DEBUG ================================================================================
+[02 Dez 2015 04:24:51] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[02 Dez 2015 04:24:51] INFO Database connection closed
+[02 Dez 2015 04:24:51] DEBUG Total time: 52244 milliseconds
